@@ -4,8 +4,8 @@ $(function() {
   $.ajax({
       url: 'https://www.codeschool.com/users/OanaOM.json',
       dataType: 'jsonp',
-      success: function(response) {
-      addCourses(response.courses.completed);
+      success: function(data) {
+      addCourses(data.courses.completed);
       }
     });
 
@@ -27,12 +27,12 @@ $(function() {
         }).appendTo($course);
 
         $('<a />', {
-          href: course.url,
           'class': 'btn btn-primary',
+          href: course.url,
           target: '_blank',
           text: 'See course'
         }).appendTo($course);
 
-      })
+      });
     }
 });
