@@ -5,7 +5,6 @@ $(function() {
       url: 'https://www.codeschool.com/users/OanaOM.json',
       dataType: 'jsonp',
       success: function(response) {
-      console.log('response', response.courses.completed);
       addCourses(response.courses.completed);
       }
     });
